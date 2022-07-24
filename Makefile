@@ -173,7 +173,7 @@ check: ##@Code Check code format
 	make docker
 	MODE=dev make start
 	sleep 10
-	make test-api
+	# make test-api
 	MODE=dev make stop
 	make check-dashboard
 
