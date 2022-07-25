@@ -170,11 +170,11 @@ check: ##@Code Check code format
 	@$(MAKE) license
 	find ./docs -type f -name "*.md" -exec egrep -l " +$$" {} \;
 	cd src/api-engine && tox && cd ${ROOT_PATH}
-	# make docker
-	# MODE=dev make start
-	# sleep 10
+	make docker
+	MODE=dev make start
+	sleep 10
 	# make test-api
-	# MODE=dev make stop
+	MODE=dev make stop
 	make check-dashboard
 
 test-case: ##@Code Run test case for flask server
